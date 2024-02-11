@@ -1,24 +1,32 @@
 <div class="parent">
   <div class="main">
-    <input type="checkbox" id="chk" aria-hidden="true">
-
+    <input type="checkbox" id="chk" aria-hidden="true" [(ngModel)]="isLoginPage">
+      <div class="login">
+        <form [formGroup]="loginForm!" (ngSubmit)="login()" style="height: 60%;">
+          <h1>Login</h1>
+          <input type="email" name="email" placeholder="Email" formControlName="email">
+          <input type="password" name="pswd" placeholder="Password" formControlName="password">
+          <button type="submit" [disabled]="loginForm!.invalid" class="right-button" tooltipPosition="bottom" pTooltip="Zaloguj">
+            <i class="pi pi-sign-in" style="font-size: 1.5rem"></i>
+          </button>
+        </form>
+        <button type="submit" class="left-button" pTooltip="Rejestracja" tooltipPosition="bottom" (click)="changePage()">
+          <i class="pi pi-user" style="font-size: 1.5rem"></i>
+        </button>
+      </div>
       <div class="signup">
         <form>
-          <label for="chk" aria-hidden="true">Sign up</label>
+          <h1>Rejestracja</h1>
           <input type="text" name="txt" placeholder="User name" required="">
           <input type="email" name="email" placeholder="Email" required="">
           <input type="password" name="pswd" placeholder="Password" required="">
-          <button>Sign up</button>
+          <button type="submit" [disabled]="loginForm!.invalid" class="right-button" pTooltip="Zarejestruj" tooltipPosition="bottom">
+            <i class="pi pi-check" style="font-size: 1.5rem"></i>
+          </button>
         </form>
-      </div>
-
-      <div class="login">
-        <form [formGroup]="loginForm!" (ngSubmit)="login()">
-          <label for="chk" aria-hidden="true">Login</label>
-          <input type="email" name="email" placeholder="Email" formControlName="email">
-          <input type="password" name="pswd" placeholder="Password" formControlName="password">
-          <button type="submit" [disabled]="loginForm!.invalid">Login</button>
-        </form>
+        <button type="submit" class="back-button" pTooltip="Wróć" tooltipPosition="top" (click)="changePage()">
+          <i class="pi pi-replay" style="padding-left: 10%;"></i>
+        </button>
       </div>
   </div>
 </div>

@@ -12,6 +12,8 @@ import { TokenInterceptor } from './interceptor/token.interceptor';
 import { HomeComponent } from './pages/home/home.component';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { LoginComponent } from './pages/login/login.component';
+import { CheckboxModule } from 'primeng/checkbox';
+import { TooltipModule } from 'primeng/tooltip';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { LoginComponent } from './pages/login/login.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CheckboxModule,
+    TooltipModule
   ],
   providers: [
     AuthGuard,

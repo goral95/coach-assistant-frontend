@@ -12,6 +12,7 @@ import { LoginRequest } from '../../model/login-request';
 export class LoginComponent implements OnInit{
 
   loginForm?: FormGroup
+  isLoginPage = true;
 
   constructor(
     private authService: AuthService,
@@ -33,7 +34,6 @@ export class LoginComponent implements OnInit{
   login(): void{
     if(this.loginForm!.valid){
       const credentials = Object.assign({}, this.loginForm!.getRawValue() as LoginRequest);
-      console.log(credentials);
       this.authService.login(credentials).subscribe(
         success => {
           if(success){
@@ -41,6 +41,11 @@ export class LoginComponent implements OnInit{
           }
         });
     }
+  }
+
+  changePage(): void{
+    this.isLoginPage = !this.isLoginPage
+    console.log(this.isLoginPage);
   }
 
 }

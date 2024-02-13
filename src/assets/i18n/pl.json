@@ -1,0 +1,14 @@
+{
+  "login": {
+    "register": "Rejestracja",
+    "form": {
+      "password": "Hasło"
+    },
+    "tooltips": {
+      "login": "Zaloguj",
+      "signup": "Zarejestruj",
+      "back": "Wróc",
+      "registration": "Rejestracja"
+    }
+  }
+}

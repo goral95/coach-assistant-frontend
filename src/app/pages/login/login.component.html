@@ -5,26 +5,26 @@
         <form [formGroup]="loginForm!" (ngSubmit)="login()" style="height: 60%;">
           <h1>Login</h1>
           <input type="email" name="email" placeholder="Email" formControlName="email">
-          <input type="password" name="pswd" placeholder="Password" formControlName="password">
-          <button type="submit" [disabled]="loginForm!.invalid" class="right-button" tooltipPosition="bottom" pTooltip="Zaloguj">
+          <input type="password" name="pswd" placeholder="{{ 'login.form.password' | translate }}" formControlName="password">
+          <button type="submit" [disabled]="loginForm!.invalid" class="right-button" tooltipPosition="bottom" pTooltip="{{ 'login.tooltips.login' | translate }}">
             <i class="pi pi-sign-in" style="font-size: 1.5rem"></i>
           </button>
         </form>
-        <button type="submit" class="left-button" pTooltip="Rejestracja" tooltipPosition="bottom" (click)="changePage()">
+        <button type="submit" class="left-button" pTooltip="{{ 'login.tooltips.registration' | translate }}" tooltipPosition="bottom" (click)="changePage()">
           <i class="pi pi-user" style="font-size: 1.5rem"></i>
         </button>
       </div>
       <div class="signup">
         <form>
-          <h1>Rejestracja</h1>
+          <h1>{{ 'login.register' | translate}}</h1>
           <input type="text" name="txt" placeholder="User name" required="">
           <input type="email" name="email" placeholder="Email" required="">
           <input type="password" name="pswd" placeholder="Password" required="">
-          <button type="submit" [disabled]="loginForm!.invalid" class="right-button" pTooltip="Zarejestruj" tooltipPosition="bottom">
+          <button type="submit" [disabled]="loginForm!.invalid" class="right-button" pTooltip="{{ 'login.tooltips.signup' | translate }}" tooltipPosition="bottom">
             <i class="pi pi-check" style="font-size: 1.5rem"></i>
           </button>
         </form>
-        <button type="submit" class="back-button" pTooltip="Wróć" tooltipPosition="top" (click)="changePage()">
+        <button type="submit" class="back-button" pTooltip="{{ 'login.tooltips.back' | translate }}" tooltipPosition="top" (click)="changePage()">
           <i class="pi pi-replay" style="padding-left: 10%;"></i>
         </button>
       </div>

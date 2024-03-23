@@ -21,3 +21,7 @@
 .selected-lang{
   border: solid 1px yellow;
 }
+
+.toast{
+  background-image: url("/assets/img/background_toast.jpg");
+}

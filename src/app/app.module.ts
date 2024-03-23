@@ -8,6 +8,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { CheckboxModule } from 'primeng/checkbox';
 import { SelectButtonModule } from 'primeng/selectbutton';
+import { ToastModule } from 'primeng/toast';
 import { TooltipModule } from 'primeng/tooltip';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,7 @@ import { TokenInterceptor } from './interceptor/token.interceptor';
 import { HomeComponent } from './pages/home/home.component';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { LoginComponent } from './pages/login/login.component';
+import { MessageService } from 'primeng/api';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
@@ -45,7 +47,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     ReactiveFormsModule,
     CheckboxModule,
     TooltipModule,
-    SelectButtonModule
+    SelectButtonModule,
+    ToastModule
   ],
   providers: [
     AuthGuard,
@@ -53,7 +56,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     {
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptor,
-    multi: true}
+    multi: true},
+    MessageService
   ],
   bootstrap: [AppComponent]
 })

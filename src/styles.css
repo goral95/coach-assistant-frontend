@@ -1,4 +1,4 @@
-@import "primeng/resources/themes/md-light-indigo/theme.css";
+@import "assets/themes/mytheme/theme.scss";
 @import "primeng/resources/primeng.css";
 @import "bootstrap/dist/css/bootstrap.min.css";
 @import "primeicons/primeicons.css";

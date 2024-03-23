@@ -17,15 +17,11 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  login(credentials: LoginRequest): Observable<boolean>{
+  login(credentials: LoginRequest): Observable<any>{
     return this.http.post<any>(`${this.authUrl}/authenticate`, credentials)
       .pipe(
-        tap(tokens => this.doLoginUser(credentials.email!, tokens)),
-        mapTo(true),
-        catchError(error => {
-          alert(error.error);
-          return of(false);
-        }));
+        tap(tokens => this.doLoginUser(credentials.email!, tokens))
+      )
   }
 
   logout() {

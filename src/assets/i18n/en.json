@@ -9,6 +9,9 @@
       "signup": "Sign up",
       "back": "Back",
       "registration": "Registration"
+    },
+    "messages": {
+      "loginError": "Bad credentials. Please try again."
     }
   }
 }

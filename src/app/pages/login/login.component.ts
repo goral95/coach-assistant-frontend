@@ -1,8 +1,9 @@
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from './../../service/auth/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginRequest } from '../../model/login-request';
+import { ToastService } from '../../service/toast/toast.service';
+import { AuthService } from './../../service/auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +16,7 @@ export class LoginComponent implements OnInit{
   isLoginPage = true;
 
   constructor(
+    private toastService: ToastService,
     private authService: AuthService,
     private fb: FormBuilder,
     private router: Router
@@ -34,18 +36,18 @@ export class LoginComponent implements OnInit{
   login(): void{
     if(this.loginForm!.valid){
       const credentials = Object.assign({}, this.loginForm!.getRawValue() as LoginRequest);
-      this.authService.login(credentials).subscribe(
-        success => {
-          if(success){
+      this.authService.login(credentials).subscribe({
+        next: () => {
             this.router.navigate(['/home']);
-          }
-        });
+        },
+        error: () => {
+            this.toastService.error('login.messages.loginError');
+      }});
     }
   }
 
   changePage(): void{
     this.isLoginPage = !this.isLoginPage
-    console.log(this.isLoginPage);
   }
 
 }

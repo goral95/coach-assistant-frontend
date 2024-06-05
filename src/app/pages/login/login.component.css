@@ -56,18 +56,6 @@ h1{
 .signup h1{
   color: #484b4f;
 }
-input{
-	width: 75%;
-	height: 30px;
-	background: #e0dede;
-	justify-content: center;
-	display: flex;
-	margin: 40px auto;
-	padding: 10px;
-	border: none;
-	outline: none;
-	border-radius: 5px;
-}
 .right-button{
 	width: 120px;
   height: 80px;
@@ -123,6 +111,6 @@ button.left-button:hover{
 button.back-button:hover{
 	border: 1px solid gray;
 }
-input.ng-touched.ng-invalid {
+/* input.ng-touched.ng-invalid {
   border: 1px solid red;
-}
+} */

@@ -32,7 +32,7 @@ $inputFocusBorderColor: $primaryColor;
 
 /// Color of an input field in invalid state
 /// @group form
-$inputErrorBorderColor: #ced4da #ced4da #ced4da $errorColor;
+$inputErrorBorderColor: $errorColor;
 
 /// Text color of a placeholder
 /// @group form
@@ -511,7 +511,7 @@ $fileUploadProgressBarHeight: .25rem;
 /// @group input
 $fileUploadContentPadding: 2rem 1rem;
 
-/// 
+///
 /// @group input
 $fileUploadContentHoverBorder: 1px dashed #e9ecef !default;
 

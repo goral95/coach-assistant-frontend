@@ -1,0 +1,17 @@
+{
+ "login": {
+    "register": "Registration",
+    "form": {
+      "password": "Password"
+    },
+    "tooltips": {
+      "login": "Log in",
+      "signup": "Sign up",
+      "back": "Back",
+      "registration": "Registration"
+    },
+    "messages": {
+      "loginError": "Bad credentials. Please try again."
+    }
+  }
+}

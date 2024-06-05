@@ -1,0 +1,17 @@
+{
+  "login": {
+    "register": "Rejestracja",
+    "form": {
+      "password": "Hasło"
+    },
+    "tooltips": {
+      "login": "Zaloguj",
+      "signup": "Zarejestruj",
+      "back": "Wróc",
+      "registration": "Rejestracja"
+    },
+    "messages": {
+      "loginError": "Błędne dane logowania. Spróbuj ponownie."
+    }
+  }
+}
